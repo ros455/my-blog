@@ -1,0 +1,29 @@
+.textarea {
+    width: 80%;
+    min-height: 300px;
+    outline:none;
+    resize: none;
+}
+
+.input-title {
+    width: 80%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    /* border-bottom: 1px splid black; */
+    padding: 10px 0px;
+    outline:none;
+}
+
+.input-title:active {
+    border: none;
+}
+
+.add-post-button {
+    margin: 10px 0px;
+}
+
+.addpost-button-save,
+.addpost-button-exit {
+    margin: 10px;
+}

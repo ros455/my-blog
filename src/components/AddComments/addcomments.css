@@ -1,0 +1,26 @@
+.comment-wrapper {
+    width: 60%;
+    margin: 30px 0px;
+}
+.add-comments-input {
+    min-height: 80px;
+    width: 100%;
+    outline:none;
+    resize: none;
+    border:none;
+    border-bottom: 1px solid rgb(170, 170, 170);
+}
+
+.add-comments-input:focus {
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.add-comments-form {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.add-comments-form button {
+    cursor: pointer;
+}

@@ -1,0 +1,10 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin-top: 100px;
+}
+
+h3,input{
+    margin: 10px 0px 10px 0px;
+}

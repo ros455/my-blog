@@ -1,0 +1,19 @@
+.user {
+    display: flex;
+    margin: 20px 0px;
+}
+.user p {
+    padding-left: 15px;
+}
+
+.user-img-wrapper {
+    width: 40px;
+    height: 40px;
+}
+
+.user-img {
+    height: 100%;
+    width: 100%;
+    /* object-fit: contain; */
+    border-radius: 50%;
+}
