@@ -104,10 +104,6 @@ export const AddPost = () => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-        {/* <textarea
-        className='textarea'
-        value={text}
-        onChange={(e) => setText(e.target.value)}/> */}
         <SimpleMDE className='textarea' value={text} onChange={onChange} options={options} />
       <div>
 
