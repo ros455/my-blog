@@ -2,6 +2,7 @@ import React from 'react'
 import user from './user.css'
 export const User = ({image, fullName, email}) => {
   console.log('user image',image)
+  console.log('procces:',process.env.REACT_APP_URL)
   return (
     <div className="user">
     <div className='user-img-wrapper'>
@@ -13,3 +14,4 @@ export const User = ({image, fullName, email}) => {
   </div>
   )
 }
+// https://ros455-my-blog.herokuapp.com/uploads/1-min.jpg
