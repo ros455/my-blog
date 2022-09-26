@@ -97,7 +97,7 @@ export const AddPost = () => {
         <Button variant='danger' onClick={onClickRemoveImage} className='add-post-button'>
           Удалить
         </Button>
-        {imageUrl && <img src={`http://localhost:5555${imageUrl}`}/>}
+        {imageUrl && <img src={`${process.env.REACT_APP_URL}${imageUrl}`}/>}
       <input
         placeholder="Заголовок статьи..."
         className='input-title'

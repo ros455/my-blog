@@ -5,7 +5,7 @@ export const User = ({image, fullName, email}) => {
   return (
     <div className="user">
     <div className='user-img-wrapper'>
-    <img src={image ? `http://localhost:5555${image}` : "/img/noavatar.png"} alt="no-avatar" className="user-img"/>
+    <img src={image ? `${process.env.REACT_APP_URL}${image}` : "/img/noavatar.png"} alt="no-avatar" className="user-img"/>
     </div>
     <p>{fullName}</p> 
     <div>

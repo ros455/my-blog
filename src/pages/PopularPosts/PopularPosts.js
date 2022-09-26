@@ -85,7 +85,7 @@ const addToArray  = () =>  {
           createdAt={el.createdAt.substring(0,10)}
           // text={`${el.text.substring(0,50)}...`}
           viewsCount={el.viewsCount}
-          imageUrl={el.imageUrl ? `http://localhost:5555${el.imageUrl}` : ""}
+          imageUrl={el.imageUrl ? `${process.env.REACT_APP_URL}${el.imageUrl}` : ""}
           user={el.user}>
           <ReactMarkdown children={`${el.text.substring(0,50)}...`}/>
           </Post>

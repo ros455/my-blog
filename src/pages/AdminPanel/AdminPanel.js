@@ -88,7 +88,7 @@ export const AdminPanel = () => {
             {avatarUrl ? (
               <div className="admin-img-wrapper">
                 <img
-                  src={`http://localhost:5555${avatarUrl}`}
+                  src={`${process.env.REACT_APP_URL}${avatarUrl}`}
                   className="admin-img"
                 />
               </div>

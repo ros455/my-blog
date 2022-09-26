@@ -43,7 +43,7 @@ export const Comments = () => {
             <div className="comment">
               <div className="comment-img-wrapper">
                 <img
-                  src={`http://localhost:5555${el.user.avatarUrl}`}
+                  src={`${process.env.REACT_APP_URL}${el.user.avatarUrl}`}
                   className="comment-img"
                 />
               </div>

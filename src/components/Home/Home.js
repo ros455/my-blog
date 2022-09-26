@@ -87,7 +87,7 @@ export const Home = () => {
               viewsCount={el.viewsCount}
               // text={`${el.text.substring(0,50)}...`}
               user={el.user}
-              imageUrl={el.imageUrl ? `http://localhost:5555${el.imageUrl}` : ""}
+              imageUrl={el.imageUrl ? `${process.env.REACT_APP_URL}${el.imageUrl}` : ""}
             >
             <ReactMarkdown children={`${el.text.substring(0,50)}...`}/> 
             </Post>

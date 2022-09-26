@@ -32,7 +32,7 @@ export const FullPost = () => {
         createdAt={data.createdAt.substring(0,10)}
         viewsCount={data.viewsCount}
         user={data.user}
-        imageUrl={data.imageUrl ? `http://localhost:5555${data.imageUrl}` : ''}
+        imageUrl={data.imageUrl ? `${process.env.REACT_APP_URL}${data.imageUrl}` : ''}
         isFullPost={true}
         >
         <ReactMarkdown children={data.text}/> 
