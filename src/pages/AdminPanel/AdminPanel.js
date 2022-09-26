@@ -33,7 +33,6 @@ export const AdminPanel = () => {
     };
 
     const onSubmit = async () => {
-      // debugger
         try{
           const fields = {
             fullName,
@@ -42,7 +41,6 @@ export const AdminPanel = () => {
           }
 
           const {data} = await axios.patch(`/adminPanel/${id}`, fields);
-          // const {data} = isEditing ? await axios.patch(`/adminPanel/${id}`, fields) : await axios.post('/adminPanel', fields);
           window.location.reload()
         } catch(err) {
           console.warn(err)
