@@ -3,6 +3,7 @@ import user from './user.css'
 export const User = ({image, fullName, email}) => {
   console.log('user image',image)
   console.log('procces:',process.env.REACT_APP_URL)
+  console.log(`Full path: ${process.env.REACT_APP_URL}${image}`)
   return (
     <div className="user">
     <div className='user-img-wrapper'>
