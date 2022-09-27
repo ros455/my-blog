@@ -8,5 +8,6 @@
 @media(max-width: 992px) {
     .full-post-wrapper {
         width: 90%;
+        box-shadow: 0 4px 0px -2px rgb(54, 54, 54);
     }
   }
