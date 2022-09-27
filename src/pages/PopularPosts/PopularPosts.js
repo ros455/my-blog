@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
+import { Loading } from '../../components/Loading/Loading';
 import { Post } from '../../components/Post/Post';
 import { fetchPosts } from '../../store/posts';
 export const PopularPosts = () => {
@@ -93,6 +94,6 @@ const addToArray  = () =>  {
       </>
     )
   } else(
-    <h1>Loading...</h1>
+    <Loading/>
   )
 }

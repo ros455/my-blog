@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import adminpanel from './adminpanel.css'
 import axios from '../../axios'
 import { Button } from "react-bootstrap";
+import { Loading } from "../../components/Loading/Loading";
 export const AdminPanel = () => {
 
     const {id} = useParams();
@@ -57,7 +58,6 @@ export const AdminPanel = () => {
     if(id) {
       axios.get(`/auth/me`)
       .then(({data}) => {
-          console.log('user data promise',data)
         setFullName(data.fullName);
         setEmail(data.email);
         setAvatarUrl(data.avatarUrl)
@@ -145,6 +145,8 @@ export const AdminPanel = () => {
       </>
     );
   } else {
-    return <h1>LOADING...</h1>;
+    return (
+      <Loading/>
+    )
   }
 };

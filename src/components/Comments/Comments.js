@@ -1,16 +1,17 @@
-import React from 'react'
-import { useParams } from 'react-router-dom';
-import axios from '../../axios';
-import { AddComments } from '../AddComments/AddComments';
-import comment from './comments.css'
+import React from "react";
+import { useParams } from "react-router-dom";
+import axios from "../../axios";
+import { AddComments } from "../AddComments/AddComments";
+import comment from "./comments.css";
 import { selectIsAuth } from "../../store/auth";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 export const Comments = () => {
   const [data, setData] = React.useState();
-  const [comment,setComment] = React.useState([]);
-  const {id} = useParams();
+  const [comment, setComment] = React.useState([]);
+  const { id } = useParams();
   const isAuth = useSelector(selectIsAuth);
-  const url = useSelector((state) => state.url.url)
+  const url = useSelector((state) => state.url.url);
+  
   React.useEffect(() => {
     axios
       .get(`/posts/${id}/comments`)
@@ -24,17 +25,17 @@ export const Comments = () => {
   }, []);
 
   React.useEffect(() => {
-    if(data) {
-      let arr = []
+    if (data) {
+      let arr = [];
       data.forEach((el) => {
-        if(id == el.post) {
-          arr.push(el)
+        if (id == el.post) {
+          arr.push(el);
         }
-        setComment(arr)
-      })
+        setComment(arr);
+      });
     }
-  },[data])
-  console.log('comment',comment)
+  }, [data]);
+
   return (
     <>
       {isAuth && <AddComments />}
@@ -49,11 +50,11 @@ export const Comments = () => {
                 />
               </div>
               <p className="comment-user">{el.user.fullName}</p>
-              <p className='comment-date'>{el.createdAt.substring(0,10)}</p>
+              <p className="comment-date">{el.createdAt.substring(0, 10)}</p>
             </div>
             <p className="comment-text">{el.text}</p>
           </div>
         ))}
     </>
   );
-}
+};

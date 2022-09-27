@@ -4,7 +4,6 @@ import { fetchPosts } from '../../store/posts';
 import { Link } from 'react-router-dom';
 import { Post } from '../Post/Post';
 import { Home } from '../Home/Home';
-// import { LoadingPost } from '../LoadingPost/LoadingPost';
 import home from './home.css'
 
 export const LoadingPost = () => {
@@ -21,8 +20,6 @@ export const LoadingPost = () => {
   React.useEffect(() => {
       dispatch(fetchPosts())
   },[])
-
-  //----------------------
 
   React.useEffect((e) => {
     document.addEventListener('scroll',scrollHandller)
