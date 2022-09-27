@@ -4,7 +4,6 @@ import { fetchPosts } from '../../store/posts';
 import { Link } from 'react-router-dom';
 import { Post } from '../Post/Post';
 import home from './home.css'
-import ReactMarkdown from 'react-markdown';
 
 export const Home = () => {
     const [number, setNumber] = React.useState(10);
@@ -88,9 +87,7 @@ export const Home = () => {
               viewsCount={el.viewsCount}
               user={el.user}
               imageUrl={el.imageUrl ? `${url}${el.imageUrl}` : ""}
-            >
-            <ReactMarkdown children={`${el.text.substring(0,50)}...`}/> 
-            </Post>
+            />
             </div>
           </div>
         ))}

@@ -13,10 +13,6 @@
     margin-bottom: 0px;
 }
 
-/* nav {
-    width: 70%;
-} */
-
 .header-title {
     width: 10%;
     padding-left: 5px;
@@ -43,16 +39,13 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 25%;
+    width: 35%;
 }
 
 .navbar {
     justify-content: center;
     width: 100%;
-}
-
-.navbar-toggler {
-    justify-content: flex-start;
+    margin-bottom: 10px;
 }
 
 .container-fluid {

@@ -1,0 +1,12 @@
+.conntact-author-wrapper {
+    width: 60%;
+}
+
+.conntact-author-wrapper h3{
+    text-align: center;
+}
+@media(max-width: 992px) {
+    .conntact-author-wrapper {
+        width: 90%;
+    }
+  }

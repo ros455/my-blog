@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { Post } from '../../components/Post/Post';
 import { fetchPosts } from '../../store/posts';
-import ReactMarkdown from 'react-markdown';
 export const PopularPosts = () => {
 
   const dispatch = useDispatch();
@@ -85,12 +84,9 @@ const addToArray  = () =>  {
           id={el._id}
           title={el.title}
           createdAt={el.createdAt.substring(0,10)}
-          // text={`${el.text.substring(0,50)}...`}
           viewsCount={el.viewsCount}
           imageUrl={el.imageUrl ? `${url}${el.imageUrl}` : ""}
-          user={el.user}>
-          <ReactMarkdown children={`${el.text.substring(0,50)}...`}/>
-          </Post>
+          user={el.user}/>
             </div>
           </div>
         ))}

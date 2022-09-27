@@ -39,8 +39,8 @@ export const Header = () => {
                     <Link to="/">Головна</Link>
                     <Link to="myPosts">Мої статті</Link>
                     <Link to="/PopularPosts">Популярне</Link>
-                    <Link to="/CooperationPolicy">Політика співпраці</Link>
-                    <Link to={`/adminPanel/${userData._id}`}>Панель адміністратора</Link>
+                    <Link to="/CooperationPolicy">Контакти</Link>
+                    <Link to={`/adminPanel/${userData._id}`}>Про мене</Link>
                   </div>
                 </nav>
               ) : (
@@ -48,7 +48,7 @@ export const Header = () => {
                   <div className="navigationg-wrapper">
                     <Link to="/">Головна</Link>
                     <Link to="/PopularPosts">Популярне</Link>
-                    <Link to="/CooperationPolicy">Політика співпраці</Link>
+                    <Link to="/CooperationPolicy">Контакти</Link>
                   </div>
                 </nav>
               )}
