@@ -22,9 +22,6 @@
     padding-left: 5px;
 }
 
-.container-fluid {
-    width: 75%;
-}
 .header-button button {
     margin: 0px 10px 0px 10px;
 }
@@ -42,19 +39,24 @@ a {
     width: 95%;
 }
 /*-----*/
-
-.navbar {
-    width: 100%;
-}
-/* .navbar-collapse {
-    width: 80%;
-} */
-
 .header-button {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 25%;
+}
+
+.navbar {
+    justify-content: center;
+    width: 100%;
+}
+
+.navbar-toggler {
+    justify-content: flex-start;
+}
+
+.container-fluid {
+    width: 100%;
 }
 
 @media(max-width: 992px) {

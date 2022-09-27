@@ -10,6 +10,7 @@ export const Comments = () => {
   const [comment,setComment] = React.useState([]);
   const {id} = useParams();
   const isAuth = useSelector(selectIsAuth);
+  const url = useSelector((state) => state.url.url)
   React.useEffect(() => {
     axios
       .get(`/posts/${id}/comments`)
@@ -35,7 +36,7 @@ export const Comments = () => {
   },[data])
   console.log('comment',comment)
   return (
-    <div className='main-comments-wrapper'>
+    <>
       {isAuth && <AddComments />}
       {comment &&
         comment.map((el) => (
@@ -43,7 +44,7 @@ export const Comments = () => {
             <div className="comment">
               <div className="comment-img-wrapper">
                 <img
-                  src={`${process.env.REACT_APP_URL}${el.user.avatarUrl}`}
+                  src={`${url}${el.user.avatarUrl}`}
                   className="comment-img"
                 />
               </div>
@@ -53,6 +54,6 @@ export const Comments = () => {
             <p className="comment-text">{el.text}</p>
           </div>
         ))}
-    </div>
+    </>
   );
 }

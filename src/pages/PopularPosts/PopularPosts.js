@@ -10,6 +10,8 @@ export const PopularPosts = () => {
   const [slicePost, setSlicePost] = React.useState([]);
   const {posts} = useSelector((state) => state.posts);
 
+  const url = useSelector((state) => state.url.url)
+
   React.useEffect(()=> {
     dispatch(fetchPosts())
 },[])
@@ -75,7 +77,7 @@ const addToArray  = () =>  {
 
   if(slicePost[0] != undefined && slicePost.length <= post.length) {
     return (
-      <div className='home-wrapper'>
+      <>
         {slicePost.map((el, index) => (
           <div key={index} className='home-post-wrapper'>
             <div className='post-wrapper'>
@@ -85,14 +87,14 @@ const addToArray  = () =>  {
           createdAt={el.createdAt.substring(0,10)}
           // text={`${el.text.substring(0,50)}...`}
           viewsCount={el.viewsCount}
-          imageUrl={el.imageUrl ? `${process.env.REACT_APP_URL}${el.imageUrl}` : ""}
+          imageUrl={el.imageUrl ? `${url}${el.imageUrl}` : ""}
           user={el.user}>
           <ReactMarkdown children={`${el.text.substring(0,50)}...`}/>
           </Post>
             </div>
           </div>
         ))}
-      </div>
+      </>
     )
   } else(
     <h1>Loading...</h1>

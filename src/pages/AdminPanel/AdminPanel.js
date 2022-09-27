@@ -14,6 +14,8 @@ export const AdminPanel = () => {
     const [avatarUrl, setAvatarUrl] = React.useState('');
     const inputFileRef = React.useRef(null);
 
+    const url = useSelector((state) => state.url.url)
+
     const handleChangeFile = async (event) => {
       try{
         const formData = new FormData();
@@ -69,7 +71,7 @@ export const AdminPanel = () => {
   
   if (userData) {
     return (
-      <div className="admin-panel-wrapper">
+      <>
         {id && (
           <div className="admin-wrapper">
             <Button
@@ -88,7 +90,7 @@ export const AdminPanel = () => {
             {avatarUrl ? (
               <div className="admin-img-wrapper">
                 <img
-                  src={`${process.env.REACT_APP_URL}${avatarUrl}`}
+                  src={`${url}${avatarUrl}`}
                   className="admin-img"
                 />
               </div>
@@ -140,7 +142,7 @@ export const AdminPanel = () => {
             </div>
           </div>
         )}
-      </div>
+      </>
     );
   } else {
     return <h1>LOADING...</h1>;

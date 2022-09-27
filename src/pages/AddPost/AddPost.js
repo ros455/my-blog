@@ -18,6 +18,8 @@ export const AddPost = () => {
     const isEditing = Boolean(id);
     const inputFileRef = React.useRef(null);
 
+    const url = useSelector((state) => state.url.url)
+
     const handleChangeFile = async (event) => {
       try{
         const formData = new FormData();
@@ -90,34 +92,76 @@ export const AddPost = () => {
     [],
   );
   return (
-    <form >
-      <Button variant="outline-primary" onClick={() => inputFileRef.current.click()} className='add-post-button'>Завантажити аватар</Button>
-      <input ref={inputFileRef} onChange={handleChangeFile} type='file' hidden/>
+    <div className='add-post-wrapper'>
+      <form>
+        <Button
+          variant="outline-primary"
+          onClick={() => inputFileRef.current.click()}
+          className="add-post-button"
+        >
+          Завантажити фото
+        </Button>
+        <input
+          ref={inputFileRef}
+          onChange={handleChangeFile}
+          type="file"
+          hidden
+        />
 
-        <Button variant='danger' onClick={onClickRemoveImage} className='add-post-button'>
+        <Button
+          variant="danger"
+          onClick={onClickRemoveImage}
+          className="add-post-button"
+        >
           Удалить
         </Button>
-        {imageUrl && <img src={`${process.env.REACT_APP_URL}${imageUrl}`}/>}
-      <input
-        placeholder="Заголовок статьи..."
-        className='input-title'
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-        <SimpleMDE className='textarea' value={text} onChange={onChange} options={options} />
-      <div>
+        <div className='add-post-img-wrapper'>
+        {imageUrl && <img src={`${url}${imageUrl}`} />}
+        </div>
+        <input
+          placeholder="Заголовок статьи..."
+          className="input-title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <SimpleMDE
+          className="textarea"
+          value={text}
+          onChange={onChange}
+          options={options}
+        />
+        <div>
+          {isEditing ? (
+            <Link to={`/myPosts/${id}`} className="link-change">
+              <Button
+                variant="primary"
+                type="submit"
+                onClick={onSubmit}
+                className="addpost-button-save"
+              >
+                Редагувати
+              </Button>
+            </Link>
+          ) : (
+            <Link to={`/myPosts`} className="link-change">
+              <Button
+                variant="primary"
+                type="submit"
+                onClick={onSubmit}
+                className="addpost-button-save"
+              >
+                Опубликовать
+              </Button>
+            </Link>
+          )}
 
-        {isEditing ? <Link to={`/myPosts/${id}`} className='link-change'>
-        <Button variant='primary' type='submit' onClick={onSubmit} className='addpost-button-save'>Редагувати</Button>
-        </Link> : <Link to={`/myPosts`} className='link-change'>
-          <Button variant='primary' type='submit' onClick={onSubmit} className='addpost-button-save'>Опубликовать</Button>
-        </Link>}
-
-
-        <a href="/">
-          <Button variant='danger' className='addpost-button-exit'>Відміна</Button>
-        </a>
-      </div>
-    </form>
-  )
+          <a href="/">
+            <Button variant="danger" className="addpost-button-exit">
+              Відміна
+            </Button>
+          </a>
+        </div>
+      </form>
+    </div>
+  );
 }

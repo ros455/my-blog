@@ -14,7 +14,8 @@ export const Home = () => {
     const userData = useSelector(state => state.auth.data);
     const post = [...posts.items];
     post.reverse();
-    
+
+    const url = useSelector((state) => state.url.url)
 
   React.useEffect(() => {
       dispatch(fetchPosts())
@@ -75,7 +76,7 @@ export const Home = () => {
 
   if(slicePost[0] != undefined && slicePost.length <= post.length) {
     return (
-      <div className='home-wrapper'>
+      <>
         {slicePost.map((el, index) => (
           <div key={index} className='home-post-wrapper'>
             <div className="post-wrapper">
@@ -85,16 +86,15 @@ export const Home = () => {
               title={el.title}
               createdAt={el.createdAt.substring(0,10)}
               viewsCount={el.viewsCount}
-              // text={`${el.text.substring(0,50)}...`}
               user={el.user}
-              imageUrl={el.imageUrl ? `${process.env.REACT_APP_URL}${el.imageUrl}` : ""}
+              imageUrl={el.imageUrl ? `${url}${el.imageUrl}` : ""}
             >
             <ReactMarkdown children={`${el.text.substring(0,50)}...`}/> 
             </Post>
             </div>
           </div>
         ))}
-      </div>
+      </>
     )
   } else(
     <h1>Loading...</h1>

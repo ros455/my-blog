@@ -15,6 +15,9 @@ export const MyPosts = () => {
 
     const myPosts = useSelector(myPostsReducerSelect);
 
+    const url = useSelector((state) => state.url.url)
+    
+
 
     React.useEffect(()=> {
         dispatch(fetchPosts())
@@ -42,7 +45,7 @@ export const MyPosts = () => {
       post.reverse();
 
   return (
-    <div className='home-wrapper'>
+    <>
       {post.map((el) => (
         <div key={el._id} className='home-post-wrapper'>
           <div className='post-wrapper'>
@@ -52,7 +55,7 @@ export const MyPosts = () => {
             createdAt={el.createdAt.substring(0,10)}
             // text={`${el.text.substring(0,50)}...`}
             viewsCount={el.viewsCount}
-            imageUrl={el.imageUrl ? `${process.env.REACT_APP_URL}${el.imageUrl}` : ""}
+            imageUrl={el.imageUrl ? `${url}${el.imageUrl}` : ""}
             user={el.user}
             isEditable={userData?._id == el.user._id}
           >
@@ -61,6 +64,6 @@ export const MyPosts = () => {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 }

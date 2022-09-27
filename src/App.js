@@ -24,6 +24,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
+      <div className='all-wrapper'>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/CooperationPolicy" element={<CooperationPolicy/>}/>
@@ -38,6 +39,7 @@ function App() {
         <Route path="/adminPanel/:id" element={<AdminPanel/>}/>
         <Route path="/adminPanel/:id/edit" element={<AdminPanel/>}/>
       </Routes>
+      </div>
     </div>
   );
 }

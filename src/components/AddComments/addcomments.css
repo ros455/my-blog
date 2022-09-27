@@ -24,3 +24,9 @@
 .add-comments-form button {
     cursor: pointer;
 }
+
+@media(max-width: 992px) {
+    .comment-wrapper{
+        width: 90%;
+    }
+  }

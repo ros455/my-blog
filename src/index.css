@@ -19,3 +19,9 @@ button {
     border-bottom: 1px solid rgb(131, 131, 131);
     max-width: 100%;
 }
+
+.all-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
