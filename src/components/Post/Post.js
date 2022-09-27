@@ -24,7 +24,7 @@ export const Post = ({ id, title, createdAt, viewsCount, text, isFullPost,isPost
           {isFullPost ? (
             <h1>{title}</h1>
           ) : (
-            <Link to={`/posts/${id}`}>
+            <Link to={`/posts/${id}`} className="post-link-title">
               <h1 className="post-title">{title}</h1>
             </Link>
           )}

@@ -67,6 +67,10 @@
     justify-content: space-between;
 }
 
+.post-link-title {
+    text-decoration: none;
+}
+
 @media(max-width: 992px) {
     .post-image img {
         min-height: 0;
