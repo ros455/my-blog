@@ -4,6 +4,7 @@ import { fetchPosts } from '../../store/posts';
 import { addMyPosts } from '../../store/myPosts';
 import { myPostsReducerSelect } from '../../store/myPosts';
 import { Post } from '../../components/Post/Post';
+import mypost from './myposts.css'
 export const MyPosts = () => {
 
     const dispatch = useDispatch();
@@ -65,10 +66,10 @@ export const MyPosts = () => {
         );
       } else {
         return (
-          <>
+          <div className='my-post-no-post'>
           <h3>У вас ще немає власних постів.</h3>
           <h3>Ви можите створити свій власний пост і він тут зявиться</h3>
-          </>
+          </div>
         )
       }
 }

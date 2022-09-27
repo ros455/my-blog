@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const inctance = axios.create({
-  baseURL: process.env.REACT_APP_URL,
+  baseURL: 'http://localhost:5555/',
 });
 
 inctance.interceptors.request.use((config) => {
