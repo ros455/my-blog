@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const urlAddress = createSlice({
     name: 'url',
     initialState: {
-        url: 'http://localhost:5555/'
+        url: process.env.REACT_APP_URL
     },
 })
 
