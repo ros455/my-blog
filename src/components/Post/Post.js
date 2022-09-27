@@ -30,42 +30,51 @@ export const Post = ({ id, title, createdAt, viewsCount, text, isFullPost,isPost
           )}
         </div>
         <div className="edit-avatar-wrapper">
-        {user ? (
-          <User
-            image={user.avatarUrl}
-            fullName={user.fullName}
-            email={user.email}
-          />
-        ) : (
-          ""
-        )}
-        {isEditable && (
-          <div className="change-delete">
-            <button onClick={onClickRemove}>
-              <AiFillDelete className="AiFillDelete" />
-            </button>
-            <Link to={`/posts/${id}/edit`}>
-              <p>
-                <BsPencilFill className="BsPencilFill" />
-              </p>
-            </Link>
-          </div>
-        )}
-        </div>
-        <div className="post-image">
-          {imageUrl ? 
-          <img src={imageUrl} />
-        :
-        <img className="non-image" src="/img/not-image.png"></img>}
+          {user ? (
+            <User
+              image={user.avatarUrl}
+              fullName={user.fullName}
+              email={user.email}
+            />
+          ) : (
+            ""
+          )}
+          {isEditable && (
+            <div className="change-delete">
+              <button onClick={onClickRemove}>
+                <AiFillDelete className="AiFillDelete" />
+              </button>
+              <Link to={`/posts/${id}/edit`}>
+                <p>
+                  <BsPencilFill className="BsPencilFill" />
+                </p>
+              </Link>
+            </div>
+          )}
         </div>
         {isFullPost ? (
-          <div>
-            {children && <>{children}</>}
+          <div className="post-image">
+            {imageUrl ? (
+              <img src={imageUrl} />
+            ) : (
+              <img className="non-image" src="/img/not-image.png"></img>
+            )}
           </div>
         ) : (
-          <div className="text-wrapper">
-            {children && <>{children}</>}
-          </div>
+          <Link to={`/posts/${id}`}>
+            <div className="post-image">
+              {imageUrl ? (
+                <img src={imageUrl} />
+              ) : (
+                <img className="non-image" src="/img/not-image.png"></img>
+              )}
+            </div>
+          </Link>
+        )}
+        {isFullPost ? (
+          <div>{children && <>{children}</>}</div>
+        ) : (
+          <div className="text-wrapper">{children && <>{children}</>}</div>
         )}
         <div>Дата створення: {createdAt}</div>
         <p>
