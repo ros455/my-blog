@@ -15,7 +15,7 @@ export const ArrowUp = () => {
       );
 
       const scrollHandller = (e) => {
-        if(e.target.documentElement.scrollTop > 200) {
+        if(e.target.documentElement.scrollTop > 300) {
             setIsBool(true)
         }
         else{
