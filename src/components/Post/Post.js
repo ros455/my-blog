@@ -8,7 +8,6 @@ import { fetchRemovePost } from "../../store/posts";
 import { useDispatch } from "react-redux";
 import post from './post.css';
 import { User } from "../User/User";
-
 export const Post = ({ id, title, createdAt, viewsCount, text, isFullPost,isPostsLoading, user,isEditable, imageUrl, children }) => {
   const dispatch = useDispatch();
     

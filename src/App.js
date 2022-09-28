@@ -14,6 +14,7 @@ import { FullPost } from "./components/FullPost/FullPost";
 import { MyPosts } from "./pages/MyPosts/MyPosts";
 import { AdminPanel } from "./pages/AdminPanel/AdminPanel";
 import { Footer } from './components/Footer/Footer';
+import { ArrowUp } from './components/ArrowUp/ArrowUp';
 function App() {
   const dispatch = useDispatch();
   const isAuth = useSelector(selectIsAuth)
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <div className="App">
+      <ArrowUp/>
       <Header/>
       <div className='all-wrapper'>
       <Routes>

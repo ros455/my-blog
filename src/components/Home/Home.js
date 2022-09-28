@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "../../store/posts";
 import { Loading } from "../Loading/Loading";
 import { Post } from "../Post/Post";
+import axios from "../../axios.js";
 import home from "./home.css";
+
 
 export const Home = () => {
   const [number, setNumber] = React.useState(10);
@@ -82,6 +84,8 @@ export const Home = () => {
       setNumber(number + 10);
     }
   };
+
+  console.log('slicePost',slicePost)
 
   if (slicePost[0] != undefined && slicePost.length <= post.length) {
     return (

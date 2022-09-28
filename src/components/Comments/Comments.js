@@ -36,6 +36,8 @@ export const Comments = () => {
     }
   }, [data]);
 
+  console.log('comment',comment)
+
   return (
     <>
       {isAuth && <AddComments />}
